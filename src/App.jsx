@@ -1,5 +1,7 @@
 import './App.css'
 
+
+import { UserProvider } from './context/UserProvider';
 import MainLayout from './layouts/MainLayout';
 import AuthLayout from './layouts/AuthLayout';
 
@@ -12,6 +14,8 @@ import Employee from './pages/colab/Colab';
 
 function App() {
   return (
+    
+    <UserProvider>
     <div className='app'>
        <BrowserRouter>
       <Routes>
@@ -27,6 +31,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     </div>
+    </UserProvider>
   )
 }
 
