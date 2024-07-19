@@ -1,22 +1,23 @@
 import React, { useState, useContext } from 'react';
-import { UserContext } from './UserContext';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { UserContext } from '../../context/UserProvider';
+import { auth } from '../../firebase/firebase'; 
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import './login.module.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const auth = getAuth();
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const idToken = await userCredential.user.getIdToken();
 
-      const response = await fetch('/auth', {
+      const response = await fetch('https://ponto-sync-back-end.vercel.app/auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,11 +32,11 @@ const Login = () => {
       const data = await response.json();
       console.log('Usuário autenticado com sucesso:', data);
 
-      // Salvar dados do usuário no contexto
       setUser(data.userData);
 
     } catch (error) {
       console.error(error);
+      setError('Erro ao autenticar usuário');
     }
   };
 
@@ -46,30 +47,43 @@ const Login = () => {
           <img src="*" alt="Imagem de boas-vindas" />
         </div>
         <div className='form-container'>
-          <h2>Bem Vindo(a)!</h2>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <label htmlFor="password">Senha:</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button type="submit">Entrar</button>
-          </form>
-          <p><a href="/forgot-password">Esqueci minha senha</a></p>
-          <p>Ainda não possui cadastro? <a href="/register">Clique aqui e crie sua conta!</a></p>
+          {user ? (
+            <div>
+              <h2>Bem-vindo, {user.name} {user.last_name}!</h2>
+              <p>Email: {user.email}</p>
+              <p>Telefone: {user.phone_number}</p>
+              <p>Pergunta de segurança: {user.security_question}</p>
+              <p>Resposta de segurança: {user.response}</p>
+            </div>
+          ) : (
+            <>
+              <h2>Bem Vindo(a)!</h2>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <label htmlFor="password">Senha:</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <button type="submit">Entrar</button>
+              </form>
+              {error && <p>{error}</p>}
+              <p><a href="/forgot-password">Esqueci minha senha</a></p>
+              <p>Ainda não possui cadastro? <a href="/register">Clique aqui e crie sua conta!</a></p>
+            </>
+          )}
         </div>
       </div>
     </section>
