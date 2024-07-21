@@ -15,30 +15,31 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const idToken = await userCredential.user.getIdToken();
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const idToken = await userCredential.user.getIdToken();
+console.log(idToken)
+        const response = await fetch('https://ponto-sync-back-end.vercel.app/auth', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ idToken, rememberMe }),
+            credentials: 'include',
+        });
 
-      const response = await fetch('https://ponto-sync-back-end.vercel.app/auth', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ idToken, rememberMe }),
-        credentials: 'include',
-      });
+        if (!response.ok) {
+            throw new Error('Erro ao autenticar usuário');
+        }
 
-      if (!response.ok) {
-        throw new Error('Erro ao autenticar usuário');
-      }
-
-      const data = await response.json();
-      setUser(data.userData);
+        const data = await response.json();
+        setUser(data.userData);
 
     } catch (error) {
-      console.error(error);
-      setError('Erro ao autenticar usuário');
+        console.error(error);
+        setError('Erro ao autenticar usuário');
     }
-  };
+};
+
 
   return (
     <section>

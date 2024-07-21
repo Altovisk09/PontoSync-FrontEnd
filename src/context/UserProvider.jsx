@@ -7,22 +7,12 @@ export const UserProvider = ({ children }) => {
 
     useEffect(() => {
         const checkUser = async () => {
-            if (user !== null) {
-                return; 
-            }
-
-            const cookie = document.cookie.split('; ').find(row => row.startsWith('jwt='));
-
-            if (!cookie) {
-                setUser(null);
-                return;
-            }
-
             try {
                 const response = await fetch('https://ponto-sync-back-end.vercel.app/api/user', {
                     method: 'GET',
                     credentials: 'include',
                 });
+
                 if (response.ok) {
                     const data = await response.json();
                     setUser(data.userData);
@@ -30,6 +20,7 @@ export const UserProvider = ({ children }) => {
                     setUser(null);
                 }
             } catch (error) {
+                console.error('Erro ao verificar usuário:', error);
                 setUser(null);
             }
         };
