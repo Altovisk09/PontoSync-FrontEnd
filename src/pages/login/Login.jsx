@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../../context/UserProvider';
-import { auth } from '../../firebase/firebase'; 
+import { auth, db } from '../../firebase/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import './login.module.css';
 
