@@ -7,6 +7,7 @@ import './login.module.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
   const { user, setUser } = useContext(UserContext);
   const [error, setError] = useState('');
 
@@ -22,7 +23,8 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ idToken }),
+        body: JSON.stringify({ idToken, rememberMe }),
+        credentials: 'include',
       });
 
       if (!response.ok) {
@@ -30,8 +32,6 @@ const Login = () => {
       }
 
       const data = await response.json();
-      console.log('Usuário autenticado com sucesso:', data);
-
       setUser(data.userData);
 
     } catch (error) {
@@ -77,6 +77,16 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
+                <label htmlFor="rememberMe">
+                  <input
+                    type="checkbox"
+                    name="rememberMe"
+                    id="rememberMe"
+                    checked={rememberMe}
+                    onChange={(e) => setRememberMe(e.target.checked)}
+                  />
+                  Mantenha-me conectado
+                </label>
                 <button type="submit">Entrar</button>
               </form>
               {error && <p>{error}</p>}
