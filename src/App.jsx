@@ -1,5 +1,5 @@
 import './App.css'
-
+import { auth } from './config/firebase';
 
 import { UserProvider } from './context/UserProvider';
 import MainLayout from './layouts/MainLayout';
@@ -23,7 +23,7 @@ function App() {
 
         </Route>
         <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login auth={auth} />} />
           <Route path="/register" element={<Register />} />
           <Route path='/agencies' element={<Agencies/>}/>
           <Route path='/employees' element={<Employee/>}/>

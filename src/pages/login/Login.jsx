@@ -1,10 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../../context/UserProvider';
-import { auth } from '../../config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import './login.module.css';
 
-const Login = () => {
+const Login = ({auth}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
