@@ -20,10 +20,10 @@ function App() {
        <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
-
+        <Route path="/" element={<Register />} />
         </Route>
         <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login auth={auth} />} />
+        path="/login"
           <Route path="/register" element={<Register />} />
           <Route path='/agencies' element={<Agencies/>}/>
           <Route path='/employees' element={<Employee/>}/>
