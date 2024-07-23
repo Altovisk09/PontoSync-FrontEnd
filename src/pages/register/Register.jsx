@@ -22,8 +22,8 @@ const Register = () => {
             <label htmlFor="phone_number"/>
             <input type="text" name="phone_number" id="phone_number" placeholder='11 99999-9999'/>
             <label htmlFor="security_question"/>
-            <select name="security_question" id="security_question">
-                <option value="" selected disabled hidden>Pergunta de segurança</option>
+            <select name="security_question" id="security_question" defaultValue="1">
+                <option value='1' disabled hidden>Pergunta de segurança</option>
                 <option value="">Pergunta 1</option>
                 <option value="">Pergunta 2</option>
                 <option value="">Pergunta 3</option>

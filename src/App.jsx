@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Register />} />
         </Route>
         <Route element={<AuthLayout />}>
-        path="/login"
+          <Route path="/login" element={<Login auth={auth} />} />
           <Route path="/register" element={<Register />} />
           <Route path='/agencies' element={<Agencies/>}/>
           <Route path='/employees' element={<Employee/>}/>
