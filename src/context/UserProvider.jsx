@@ -4,6 +4,7 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
         const checkUser = async () => {
@@ -16,6 +17,22 @@ export const UserProvider = ({ children }) => {
                 if (response.ok) {
                     const data = await response.json();
                     setUser(data.userData);
+
+                    if (data.userData.repsId && data.userData.repsId.length > 0) {
+                        const employeesResponse = await fetch('https://ponto-sync-back-end.vercel.app/api/employees', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ employeeIds: data.userData.repsId }),
+                            credentials: 'include',
+                        });
+
+                        if (employeesResponse.ok) {
+                            const employeesData = await employeesResponse.json();
+                            setEmployees(employeesData);
+                        }
+                    }
                 } else {
                     setUser(null);
                 }
@@ -26,10 +43,10 @@ export const UserProvider = ({ children }) => {
         };
 
         checkUser();
-    }, []); 
+    }, []);
 
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider value={{ user, setUser, employees, setEmployees }}>
             {children}
         </UserContext.Provider>
     );
