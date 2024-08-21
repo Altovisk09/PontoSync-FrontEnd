@@ -17,7 +17,7 @@ const Login = ({auth}) => {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const idToken = await userCredential.user.getIdToken();
 console.log(idToken)
-        const response = await fetch('https://ponto-sync-back-end.vercel.app/auth', {
+        const response = await fetch(`${import.meta.env.VITE_URL}/auth`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

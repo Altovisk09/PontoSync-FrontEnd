@@ -9,7 +9,7 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         const checkUser = async () => {
             try {
-                const response = await fetch('https://ponto-sync-back-end.vercel.app/api/user', {
+                const response = await fetch(`${import.meta.env.VITE_URL}/api/user`, {
                     method: 'GET',
                     credentials: 'include',
                 });
@@ -19,7 +19,7 @@ export const UserProvider = ({ children }) => {
                     setUser(data.userData);
 
                     if (data.userData.repsId && data.userData.repsId.length > 0) {
-                        const employeesResponse = await fetch('https://ponto-sync-back-end.vercel.app/api/employees', {
+                        const employeesResponse = await fetch(`${import.meta.env.VITE_URL}/api/employees`, {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'

@@ -2,6 +2,7 @@ import './colab.module.css';
 
 import ColabRow from '../../components/ColabRow';
 import Menu from '../../components/Menu';
+import UploadPdf from '../../components/UploadPdf';
 
 
 const EmployeeTable = () => {
@@ -52,6 +53,7 @@ const EmployeeTable = () => {
         ))}
       </tbody>
     </table>
+    <UploadPdf/>
     </main>
   );
 };

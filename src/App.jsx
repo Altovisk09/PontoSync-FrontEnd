@@ -14,23 +14,22 @@ import Employee from './pages/colab/Colab';
 
 function App() {
   return (
-    
+
     <UserProvider>
-    <div className='app'>
-       <BrowserRouter>
-      <Routes>
-        <Route element={<MainLayout />}>
-        <Route path="/" element={<Register />} />
-        </Route>
-        <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login auth={auth} />} />
-          <Route path="/register" element={<Register />} />
-          <Route path='/agencies' element={<Agencies/>}/>
-          <Route path='/employees' element={<Employee/>}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
-    </div>
+      <div className='app'>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<Login auth={auth} />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
+            <Route element={<AuthLayout />}>
+              <Route path='/home' element={<Agencies />} />
+              <Route path='/employees' element={<Employee />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
     </UserProvider>
   )
 }
