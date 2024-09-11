@@ -1,10 +1,9 @@
 import './agencieButton.module.css'; 
 
-const AgencieButton = ({ imageSrc, name }) => {
+const AgencieButton = ({ imageSrc }) => {
   return (
     <div className="container">
       <img src={imageSrc} alt='logo' className="image" />
-      <p className="name">{name}</p>
     </div>
   );
 }

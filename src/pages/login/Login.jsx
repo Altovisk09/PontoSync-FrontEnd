@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../../context/UserProvider';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import './login.module.css';
+import styles from './login.module.css';
 
 const Login = ({auth}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser, employees} = useContext(UserContext);
   const [error, setError] = useState('');
 
   const handleSubmit = async (event) => {
@@ -39,27 +39,16 @@ console.log(idToken)
     }
 };
 
-
   return (
-    <section>
-      <div className='main-container'>
-        <div className='image-container'>
-          <img src="*" alt="Imagem de boas-vindas" />
+    <section className={styles.mainContainer}>
+      <div className={styles.formContainer}>
+        <div className={styles.imageContainer}>
+          { <img src="/images/logoMeli.png" alt="Imagem de boas-vindas" /> }
         </div>
-        <div className='form-container'>
-          {user ? (
-            <div>
-              <h2>Bem-vindo, {user.name} {user.last_name}!</h2>
-              <p>Email: {user.email}</p>
-              <p>Telefone: {user.phone_number}</p>
-              <p>Pergunta de segurança: {user.security_question}</p>
-              <p>Resposta de segurança: {user.response}</p>
-            </div>
-          ) : (
-            <>
-              <h2>Bem Vindo(a)!</h2>
+        <div className={styles.formSubContainer}> 
+              <h3>Bem Vindo(a)!</h3>
               <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email"></label>
                 <input
                   type="email"
                   name="email"
@@ -67,8 +56,9 @@ console.log(idToken)
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  placeholder='Digite seu email'
                 />
-                <label htmlFor="password">Senha:</label>
+                <label htmlFor="password"></label>
                 <input
                   type="password"
                   name="password"
@@ -76,7 +66,9 @@ console.log(idToken)
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
+                  placeholder='Senha'
                 />
+                <div className={styles.teste}>
                 <label htmlFor="rememberMe">
                   <input
                     type="checkbox"
@@ -87,13 +79,11 @@ console.log(idToken)
                   />
                   Mantenha-me conectado
                 </label>
+              </div>
                 <button type="submit">Entrar</button>
               </form>
               {error && <p>{error}</p>}
-              <p><a href="/forgot-password">Esqueci minha senha</a></p>
-              <p>Ainda não possui cadastro? <a href="/register">Clique aqui e crie sua conta!</a></p>
-            </>
-          )}
+              <p>Ainda não possui cadastro? <br /><a href="/register">Clique aqui e crie sua conta!</a></p>
         </div>
       </div>
     </section>

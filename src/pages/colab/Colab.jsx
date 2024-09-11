@@ -1,60 +1,56 @@
-import './colab.module.css';
-
-import ColabRow from '../../components/ColabRow';
-import Menu from '../../components/Menu';
-import UploadPdf from '../../components/UploadPdf';
-
+import styles from './colab.module.css';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserProvider'; 
 
 const EmployeeTable = () => {
-  const employees = [
-    { name: "Maria Silva", matricule: "123", agency: "TI", hours: 40, lastUpdate: "01/07/2024", status: "Active" },
-    { name: "João Souza", matricule: "456", agency: "HR", hours: 35, lastUpdate: "02/07/2024", status: "Active" },
-    { name: "Ana Costa", matricule: "789", agency: "TI", hours: 38, lastUpdate: "03/07/2024", status: "Inactive" }
-  ];
+  const { employees } = useContext(UserContext); 
 
-  const totalHours = employees.reduce((total, employee) => total + employee.hours, 0);
+  const minRows = 10;
+  const emptyRows = minRows - employees.length;
 
   return (
-    <main>
-      <aside>
-    <Menu/>
-      </aside>
-    <table>
-      <caption>
-          <div>
-            <span>Colaboradores</span> | 
-            <span>Total: {employees.length}</span> | 
-            <span>Validados: 0</span> | 
-            <span>Horas Totais: {totalHours}</span>
-          </div>
-        </caption>
+    <section className={styles.mainContainer}>
+      <img src="/images/rand.png" alt="Randstad"/>
+      <div className={styles.filterInfo}>
+    <p>Total de funcionarios: {employees.length}</p>
+    <div>
+    <p>Filtro</p>
+    <img src="/icons/filter.png" alt="Filtro" />
+    </div>
+      </div>
+      <table className={styles.table}>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Matricule</th>
-            <th>Agency</th>
-            <th>Hours</th>
-            <th>Last Update</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th>Colaboradores</th>
+            <th>Matrícula</th>
+            <th>Saldo BH</th>
+            <th>Data Atualizada</th>
+            <th>Ações</th>
           </tr>
         </thead>
-      <tbody>
-        {employees.map((employee, index) => (
-          <ColabRow 
-            key={index}
-            name={employee.name}
-            matricule={employee.matricule}
-            agency={employee.agency}
-            hours={employee.hours}
-            lastUpdate={employee.lastUpdate}
-            status={employee.status}
-          />
-        ))}
-      </tbody>
-    </table>
-    <UploadPdf/>
-    </main>
+        <tbody>
+          {employees.map((employee, index) => (
+            <tr key={employee.id}> 
+              <td>{employee.nome}</td>
+              <td>{employee.id}</td>
+              <td>{employee.bancoHoras}</td>
+              <td>{employee.dataEmissao}</td>
+              <td>
+                <button>Visualizar</button>
+                <button>Editar</button>
+                <button>Excluir</button>
+              </td>
+            </tr>
+          ))}
+
+          {Array.from({ length: emptyRows > 0 ? emptyRows : 0 }).map((_, index) => (
+            <tr key={`empty-${index}`} className={styles.emptyRow}>
+              <td colSpan="5">&nbsp;</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
   );
 };
 

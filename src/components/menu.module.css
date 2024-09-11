@@ -1,0 +1,60 @@
+/* Menu principal */
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 3rem; 
+    border-right: 4px solid #FEE600;
+    
+}
+
+.language {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: rem; 
+}
+.language span {
+    font-size: 1.6rem;
+    margin: 0.2rem; 
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: opacity 5s; 
+    gap: 1.2rem;
+}
+
+.optionImage {
+    width: 3rem; 
+    height: 3rem;
+    padding: 0.6rem; 
+
+}
+
+.exitImage {
+    width: 2rem; 
+    height: 2rem;
+}
+
+.menu:hover .options {
+    opacity: 1; 
+}
+
+.optionItem span {
+    display: none; 
+    font-size: 0.8rem; 
+    margin-top: 0.5rem; 
+    
+}
+
+.menu:hover .optionItem span {
+    margin-top: -15px;
+    display: block; 
+}

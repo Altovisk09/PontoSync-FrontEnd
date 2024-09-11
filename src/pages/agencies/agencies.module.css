@@ -1,0 +1,39 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    height: 90vh;
+    padding: 20px;
+}
+
+h1 {
+    font-family: "KoHo", sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    margin-bottom: 20px; 
+}
+
+.agencies {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+    margin-top: 40px;
+}
+
+.agencies img {
+    height: 174px;
+    width: 174px; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer;
+}
+
+.agencies img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    cursor: pointer; 
+}
+

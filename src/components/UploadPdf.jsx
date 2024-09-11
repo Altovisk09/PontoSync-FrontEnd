@@ -26,7 +26,7 @@ const UploadPdf = () => {
     formData.append('file', selectedFile);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_URL}/api/employees`, {
+      const response = await fetch(`${import.meta.env.VITE_URL}/api/employees/upload`, {
         method: 'POST',
         body: formData,
         credentials: 'include',

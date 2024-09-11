@@ -1,0 +1,123 @@
+.mainContainer {
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.623), 
+            rgba(0, 0, 0, 0.790)  
+        ), 
+        url('/images/background.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageContainer img {
+    width: 175px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+
+a{
+    color: white;
+}
+.formContainer {
+    width: 400px;
+}
+
+.imageContainer {
+    background-color: rgb(255, 238, 0);
+    height: 100px;
+    border-radius: 10px 10px 0 0;
+}
+
+.formSubContainer {
+   display: flex;
+   flex-direction: column;
+   background-color: rgba(117, 112, 112, 0.24);
+  padding-inline: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.formSubContainer h3 {
+    margin-top: 20px;
+    text-align: center;
+}
+.formSubContainer P {
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.formSubContainer form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+}
+.formSubContainer h2{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.formSubContainer form input {
+    padding: 8px;
+    border-radius: 11px;
+    font-size: 12px; 
+    border: none; 
+    outline: none;  
+    margin-bottom: 10px;
+    width: 100%; 
+}
+ 
+.formSubContainer form input[type="checkbox"] {
+    width: auto; 
+    padding: 0; 
+    margin-bottom: 0; 
+}
+ .formSubContainer form input::placeholder {
+    color: #888; 
+    font-size: 12px; 
+    
+}
+
+.formSubContainer form button {
+    padding: 5px 10px;
+    border-radius: 15px;
+    width: 100px;
+    border: none;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center; /* Centraliza o botão */
+}
+
+.teste {
+    font-size: 12px;
+}
+
+.teste label {
+    display: flex;
+    align-items: center; /* Alinha o texto verticalmente com o checkbox */
+    gap: 2px; /* Espaço entre o checkbox e o texto, ajuste conforme necessário */
+}
+
+
+
+ 

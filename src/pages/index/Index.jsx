@@ -4,9 +4,10 @@ import AgencieButton from '../../components/AgencieButton';
 const Index = () => {
   return (
     <section>
-        <div>
-          
-        </div>
+        <AgencieButton imageSrc={} name={"Randstad"}/>
+        <AgencieButton imageSrc={} name={"Adecco"}/>
+        <AgencieButton imageSrc={} name={"ValorRh"}/>
+        <AgencieButton imageSrc={} name={"Rhadar"}/>
     </section>
   )
 }

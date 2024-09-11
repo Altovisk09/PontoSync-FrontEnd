@@ -1,4 +1,4 @@
-import React from 'react'
+import styles from './register.module.css';
 
 const Register = () => {
     const handleSubmit = (event) => {
@@ -7,10 +7,11 @@ const Register = () => {
         console.log('Formulário enviado');
       };
   return (
-    <section>
-       <div className='main-container'>
-        <div className='form-container'>
+    <section className={styles.mainContainer}>
+      
+        <div className={styles.geralContainer}>
         <form onSubmit={handleSubmit}>
+        <h3>Cadastre-se</h3>
             <label htmlFor="name"/>
             <input type="text" name='name' id='name' placeholder='Seu nome'/>
             <label htmlFor="last-name"/>
@@ -33,9 +34,8 @@ const Register = () => {
             <input type="text" name='response' id='response' placeholder='Resposta de segurança'/>
             <button type='submit'>Cadastrar</button>
         </form>
-        </div>
-        <div className='image-container'>
-        <img src="*" alt="*" />
+        <div className={styles.imageContainer}>
+        <img src="\images\background2.png" alt="*" />
         </div>
         </div> 
     </section>

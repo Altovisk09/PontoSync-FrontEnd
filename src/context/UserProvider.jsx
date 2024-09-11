@@ -22,15 +22,18 @@ export const UserProvider = ({ children }) => {
                         const employeesResponse = await fetch(`${import.meta.env.VITE_URL}/api/employees`, {
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json'
+                                'Content-Type': 'application/json',
                             },
-                            body: JSON.stringify({ employeeIds: data.userData.repsId }),
                             credentials: 'include',
+                            body: JSON.stringify({ repsId: data.userData.repsId }), 
                         });
 
                         if (employeesResponse.ok) {
                             const employeesData = await employeesResponse.json();
                             setEmployees(employeesData);
+                            console.log(employeesData)
+                        } else {
+                            console.error('Erro ao obter funcionários:', employeesResponse.statusText);
                         }
                     }
                 } else {
