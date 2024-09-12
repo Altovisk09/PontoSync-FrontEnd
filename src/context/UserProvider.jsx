@@ -48,8 +48,9 @@ export const UserProvider = ({ children }) => {
         checkUser();
     }, []);
 
+    const isAuthenticated = user !== null;
     return (
-        <UserContext.Provider value={{ user, setUser, employees, setEmployees }}>
+        <UserContext.Provider value={{ user, setUser, employees, setEmployees, isAuthenticated }}>
             {children}
         </UserContext.Provider>
     );

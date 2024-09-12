@@ -12,7 +12,6 @@ const Agencies = () => {
 
   return (
     <section>
-      <Menu/>
       <div className={styles.mainContainer}>
         <h1>Controle de ponto</h1>
         <div className={styles.agencies}>

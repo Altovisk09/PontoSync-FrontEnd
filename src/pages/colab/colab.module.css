@@ -1,69 +1,73 @@
 .mainContainer {
- display: flex;
- flex-direction: column;
- padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.mainContainer img{
- height: 70px;
- width: 70px;
- align-self: center;
+.mainContainer img {
+  height: 70px;
+  width: 70px;
+  align-self: center;
 }
 
-.filterInfo { 
-display: flex;
-align-items: flex-end;
-flex-direction: column;
+.filterInfo {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
 .filterInfo div {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
-.filterInfo div img{ 
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
+.filterInfo div img {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
 }
 
-/* Estilo da tabela */
 .table {
   width: 100%;
-  border-collapse: collapse; /* Remove o espaçamento entre células */
+  border-collapse: collapse; 
 }
 
-/* Estilo do cabeçalho da tabela */
 .table thead th {
-  background-color: #f0f0f0;
-  color: #333;
-  padding: 10px 15px;
+  padding: 8px 12px;
   text-align: left;
-  border-bottom: 2px solid #bfbfbf; /* Borda inferior mais espessa para cabeçalhos */
   font-weight: bold;
+  background-color: #f0f0f0;
+  font-size: 0.95rem;
 }
 
-/* Estilo das células da tabela */
 .table tbody td {
-  padding: 10px 15px;
+  padding: 6px 10px;
+  text-align: left;
+  font-size: 0.9rem;
+  border: 1px solid #ccc; 
 }
 
-/* Estilo das linhas alternadas */
 .table tbody tr:nth-child(even) {
-  background-color: #f9f9f9; /* Cor de fundo alternada */
+  background-color: #f9f9f9; 
 }
 
-/* Estilo da linha vazia para preenchimento */
 .emptyRow {
-  background-color: #fff; /* Cor de fundo para linhas vazias */
+  background-color: #fff; 
 }
 
-/* Estilo dos botões */
+.table tbody td:last-child {
+  text-align: center;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 1px solid #ccc;
+}
+
 .table button {
   background-color: #007bff;
   border: none;
   color: white;
-  padding: 8px 12px;
+  padding: 6px 10px; 
   margin: 0 4px;
   border-radius: 4px;
   cursor: pointer;
@@ -73,17 +77,13 @@ flex-direction: column;
   background-color: #0056b3;
 }
 
-/* Estilo geral da tabela para se parecer com uma planilha */
-.table td, .table th {
-  border: 1px solid #ddd; /* Borda ao redor das células */
-  box-sizing: border-box; /* Inclui a borda no cálculo do tamanho das células */
+.table th, 
+.table td {
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
-.table thead th {
-  background-color: #e9ecef;
-  border-top: 1px solid #ddd;
-}
-
-.table tbody tr:last-child td {
-  border-bottom: 1px solid #ddd; /* Borda na última linha da tabela */
+.table th:last-child,
+.table td:last-child {
+  text-align: center;
 }
