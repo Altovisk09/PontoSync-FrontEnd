@@ -4,15 +4,34 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserProvider';
 
 const EmployeeTable = () => {
-  const { employees } = useContext(UserContext);
+  const { employees, setSelectedEmployee } = useContext(UserContext);
   const navigate = useNavigate();
 
   const minRows = 13;
   const emptyRows = minRows - employees.length;
 
-  const handleViewClick = (employeeId) => {
-    navigate(`/employee/${employeeId}`); 
+  const handleViewClick = async(employeeId) => { 
+    console.log('Fetching employee ID:', employeeId);  
+    try {
+      const response = await fetch(`${import.meta.env.VITE_URL}/api/employees/${employeeId}`, {
+        method: "GET",
+        credentials: "include"
+      });
+
+      if (response.ok) {
+        const dataEmployee = await response.json(); 
+        console.log('Employee data:', dataEmployee);  
+        setSelectedEmployee(dataEmployee);
+        navigate(`/employee/${employeeId}`); 
+      } else {
+        console.log('Error fetching employee:', response.statusText);  
+      }
+
+    } catch(error) {
+      console.log('Algo deu errado', error);
+    }
   };
+
 
   return (
     <section className={styles.mainContainer}>
