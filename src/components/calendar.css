@@ -1,0 +1,105 @@
+.main-calendar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .calendar-container {
+    width: 60%;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .calendar-header button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .calendar-header span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .calendar-days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+  }
+  
+  .calendar-day-name {
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+  }
+  
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .calendar-day {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .calendar-day:hover {
+    background-color: #555;
+  }
+  
+  .calendar-day.selected {
+    background-color: #ff9900;
+    color: black;
+  }
+  
+  .calendar-day.empty {
+    background-color: transparent;
+  }
+  
+  .selected-day-container {
+    width: 30%;
+  }
+  
+  .selected-day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .selected-day-header button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .selected-day-header span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .selected-day-info {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .selected-day-info h3 {
+    margin-bottom: 10px;
+  }
+  
+  .selected-day-info p {
+    margin-bottom: 5px;
+  }
+  

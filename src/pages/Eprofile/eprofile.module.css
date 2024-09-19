@@ -31,26 +31,38 @@
   flex: 1;
 }
 
-.arrowL {
+.arrowL, .arrowR {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 25px;
-  width: 25px;
-  margin-right: 20px;
+  height: 40px;
+  width: 40px;
   border: 1px solid #000;
-  border-radius: 25px;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
 }
 
-.arrowR {
+.arrowL:hover, .arrowR:hover {
+  transform: scale(1.1);
+}
+
+.dayNameContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 25px;
-  width: 25px;
-  margin-left: 20px;
-  border: 1px solid #000;
-  border-radius: 25px;
+  height: 40px;
+  margin-inline: 20px;
+}
+
+.dayName, .dayNumber {
+  font-size: 20px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.hide {
+  transform: translateX(20px);
+  opacity: 0;
 }
 
 .daySelectedContainer {
@@ -59,20 +71,28 @@
   margin-bottom: 20px;
 }
 
-.daySelectedContainer p {
-  font-size: 20px;
-}
-
-.daySelectedContainer p:last-child {
-  font-size: 20px;
-  font-weight: 510;
-}
-
 .dayNameContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 40px;
+  height: 60px;
+  margin-inline: 20px;
+  position: relative;
+}
+
+.dayName, .dayNumber {
+  font-size: 24px; /* Aumente o tamanho da fonte para melhor visibilidade */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.dayName.hide, .dayNumber.hide {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.dayNameContainer p:last-child {
+  font-size: 20px;
+  font-weight: bold; /* Aumentar a ênfase do número do dia */
 }
 
 .infoCalendar {
@@ -81,6 +101,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .employeeInfo img {
@@ -98,22 +119,22 @@
   background-color: yellow; 
   border-radius: 50%; 
   width: 40px; 
-  height: 40px; display: inline-flex;
+  height: 40px; 
+  display: inline-flex;
   align-items: center; 
   justify-content: center; 
   margin-inline: 5px;
   margin-bottom: 20px;
 }
 
-
 .timeEntriesInfo {
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
-.timeEntriesInfo p{
+.timeEntriesInfo p {
   justify-self: flex-end;
 }
 

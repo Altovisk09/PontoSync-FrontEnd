@@ -32,7 +32,6 @@ const EmployeeTable = () => {
     }
   };
 
-
   return (
     <section className={styles.mainContainer}>
       <img src="/images/rand.png" alt="Randstad"/>
