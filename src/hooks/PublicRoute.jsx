@@ -6,7 +6,7 @@ const PublicRoute = ({ element }) => {
   const { user } = useContext(UserContext);
 
   if (user) {
-    return <Navigate to="/agencies" />;
+    return <Navigate to="/employees" />;
   }
 
   return element;

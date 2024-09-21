@@ -90,6 +90,7 @@
 
 .menu:hover .language span {
     margin-inline: 30px;
+    transition: 0.2s;
 }
 
 .menu:hover .optionItem {
@@ -146,11 +147,11 @@
 }
 
 .greeting {
-    display: none; /* Oculta por padrão */
+    display: none; 
 }
 
 .menu:hover .greeting {
-    display: block; /* Mostra ao passar o mouse */
+    display: block; 
 }
 
 .optionItem {
@@ -160,14 +161,14 @@
 }
 
 .optionItem:hover {
-    transform: scale(1.05); /* Aumenta o tamanho ligeiramente */
+    transform: scale(1.05); 
     font-weight: bold;
 }
 
 .optionImage {
-    transition: transform 0.3s; /* Para transição suave */
+    transition: transform 0.3s; 
 }
 
 .optionItem:hover .optionImage {
-    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+    transform: scale(1.2); 
 }

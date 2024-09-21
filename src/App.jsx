@@ -9,7 +9,11 @@ import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Agencies from './pages/agencies/Agencies';
 import Employees from './pages/colab/Colab';
-import EmployeeProfile from './pages/Eprofile/Eprofile';
+import EmployeeProfile from './pages/emprofile/Eprofile';
+import UserProfile from './pages/usprofile/Uprofile';
+import Help from './pages/help/Help';
+import Statistics from './pages/statistics/Statistic'
+import Reports from './pages/reports/Reports';
 import ProtectedRoute from './hooks/ProtectedRoute';
 import PublicRoute from './hooks/PublicRoute';
 
@@ -27,12 +31,17 @@ function App() {
 
             {/* Rotas Protegidas */}
             <Route element={<ProtectedRoute element={<AuthLayout />} />}>
-              <Route path="/agencie/:agencie" element={<Employees />} />
+              <Route path="/employees/:agencie" element={<Employees />} />
+              <Route path="/employees" element={<Employees />} />
               <Route path="/employee/:employeeId" element={<EmployeeProfile />} />
+              <Route path="/profile" element={<UserProfile/>}/>
+              <Route path="/help" element={<Help/>}/>
+              <Route path="/statistics" element={<Statistics />}/>
+              <Route path="/reports/:agencie" element={< Reports/>}/>
             </Route>
 
             <Route element={<ProtectedRoute element={<AuthLayout2 />} />}>
-              <Route path="/agencies" element={<Agencies />} />
+              <Route path="/reports" element={<Agencies />} />
             </Route>
           </Routes>
         </BrowserRouter>

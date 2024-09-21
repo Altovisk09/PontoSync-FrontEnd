@@ -6,13 +6,13 @@ const Agencies = () => {
   const navigate = useNavigate();
 
   const handleAgencyClick = (agencyId, imageName) => {
-    navigate(`/agencie/${agencyId}`, { state: { imageName } }); 
+    navigate(`/reports/${agencyId}`, { state: { imageName } }); 
   };
 
   return (
     <section>
       <div className={styles.mainContainer}>
-        <h1>Controle de ponto</h1>
+        <h1>Relatorio de correção de ponto</h1>
         <div className={styles.agencies}>
           <a onClick={() => handleAgencyClick('randstad', 'rand.png')}>
             <AgencieButton imageSrc={"/images/rand.png"} />

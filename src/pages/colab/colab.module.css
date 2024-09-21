@@ -88,3 +88,14 @@
 .table td:last-child {
   text-align: center;
 }
+
+.agencyItem {
+  text-align: center;
+  cursor: pointer;
+}
+
+.agencyIcon {
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
+
