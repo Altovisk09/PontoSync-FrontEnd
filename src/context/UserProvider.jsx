@@ -6,7 +6,14 @@ export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [employees, setEmployees] = useState([]);
     const [selectedEmployee, setSelectedEmployee] = useState(null);
+    
+    const resetUserContext = () => {
+        setUser(null);
+        setEmployees([]);
+        setSelectedEmployee(null);
+    };
 
+    
     useEffect(() => {
         const checkUser = async () => {
             try {
@@ -50,9 +57,10 @@ export const UserProvider = ({ children }) => {
     }, []);
 
     const isAuthenticated = user !== null;
+    
     return (
         <UserContext.Provider value={{ user, setUser, employees, setEmployees, isAuthenticated, selectedEmployee,
-            setSelectedEmployee }}>
+            setSelectedEmployee, resetUserContext}}>
             {children}
         </UserContext.Provider>
     );

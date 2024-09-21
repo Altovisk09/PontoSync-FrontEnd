@@ -5,22 +5,38 @@
     justify-content: space-between;
     align-items: center;
     height: 100vh;
-    width: 3rem; 
+    width: 3rem;
     border-right: 4px solid #FEE600;
     position: fixed;
     top: 0;
     left: 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.user{
+ margin-top: -3rem;
+}
+
+.user img  {  
+   width: 35px;
+   height: 35px; 
 }
 
 .language {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: rem; 
 }
+
 .language span {
     font-size: 1.6rem;
-    margin: 0.2rem; 
+    padding-bottom: 10px
+}
+
+.language span:hover {
+    transform: scale(1.2); 
+    transition: transform 0.3s;
     cursor: pointer;
 }
 
@@ -29,34 +45,129 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    transition: opacity 5s; 
+    transition: opacity 5s;
     gap: 1.2rem;
 }
 
 .optionImage {
-    width: 3rem; 
-    height: 3rem;
-    padding: 0.6rem; 
-
+    width: 25px;
+    height: 25px;
 }
 
 .exitImage {
-    width: 2rem; 
+    width: 2rem;
     height: 2rem;
 }
 
 .menu:hover .options {
-    opacity: 1; 
+    opacity: 1;
 }
 
 .optionItem span {
-    display: none; 
-    font-size: 0.8rem; 
-    margin-top: 0.5rem; 
-    
+    display: none;
+    font-size: 0.8rem;
+
 }
 
 .menu:hover .optionItem span {
-    margin-top: -15px;
-    display: block; 
+    display: block;   
+}
+
+.menu:hover .optionItem  {
+    cursor: pointer;
+}
+
+.menu:hover {
+    width: 10rem;
+    background-color: #FFF;
+    transition: 0.2s;
+}
+
+.menu:hover .language {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu:hover .language span {
+    margin-inline: 30px;
+}
+
+.menu:hover .optionItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    font-size: 10px;
+    text-align: center;
+    width: 10rem;
+}
+
+.menu:hover .optionImage {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.6rem;
+}
+
+.menu:hover .optionItem span {
+    margin-top: 1px;
+}
+
+.menu:hover .user img {
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
+}
+
+.menu:hover .user {
+    display: flex;
+    flex-direction: column;
+}
+
+.user:hover{
+    transform: scale(1.2); 
+    transition: transform 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu:hover .optionImage {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.menu:hover .exit  span {
+    display: flex;
+    justify-content: center;
+} 
+
+.menu:hover .exit span img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.greeting {
+    display: none; /* Oculta por padrão */
+}
+
+.menu:hover .greeting {
+    display: block; /* Mostra ao passar o mouse */
+}
+
+.optionItem {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.optionItem:hover {
+    transform: scale(1.05); /* Aumenta o tamanho ligeiramente */
+    font-weight: bold;
+}
+
+.optionImage {
+    transition: transform 0.3s; /* Para transição suave */
+}
+
+.optionItem:hover .optionImage {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
 }

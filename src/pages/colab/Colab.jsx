@@ -1,11 +1,13 @@
 import styles from './colab.module.css';
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { UserContext } from '../../context/UserProvider';
 
 const EmployeeTable = () => {
   const { employees, setSelectedEmployee } = useContext(UserContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const imageName = location.state.imageName
 
   const minRows = 13;
   const emptyRows = minRows - employees.length;
@@ -34,7 +36,7 @@ const EmployeeTable = () => {
 
   return (
     <section className={styles.mainContainer}>
-      <img src="/images/rand.png" alt="Randstad"/>
+      <img src={`/images/${imageName}`} alt="Agencia"/>
       <div className={styles.filterInfo}>
         <p>Total de funcionarios: {employees.length}</p>
         <div>

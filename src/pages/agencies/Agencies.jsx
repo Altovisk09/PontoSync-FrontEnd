@@ -1,13 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './agencies.module.css';
 import AgencieButton from "../../components/AgencieButton";
-import Menu from "../../components/Menu2";
 
 const Agencies = () => {
   const navigate = useNavigate();
 
-  const handleAgencyClick = (agencyId) => {
-    navigate(`/agencie/${agencyId}`);
+  const handleAgencyClick = (agencyId, imageName) => {
+    navigate(`/agencie/${agencyId}`, { state: { imageName } }); 
   };
 
   return (
@@ -15,28 +14,28 @@ const Agencies = () => {
       <div className={styles.mainContainer}>
         <h1>Controle de ponto</h1>
         <div className={styles.agencies}>
-          <a onClick={() => handleAgencyClick('randstad')}>
+          <a onClick={() => handleAgencyClick('randstad', 'rand.png')}>
             <AgencieButton imageSrc={"/images/rand.png"} />
           </a>
-          <a onClick={() => handleAgencyClick('manpower')}>
+          <a onClick={() => handleAgencyClick('manpower', 'manp.png')}>
             <AgencieButton imageSrc={"/images/manp.png"} />
           </a>
-          <a onClick={() => handleAgencyClick('addeco')}>
+          <a onClick={() => handleAgencyClick('addeco', 'adde.png')}>
             <AgencieButton imageSrc={"/images/adde.png"} />
           </a>
-          <a onClick={() => handleAgencyClick('rhadarrh')}>
+          <a onClick={() => handleAgencyClick('rhadarrh', 'rhad.png')}>
             <AgencieButton imageSrc={"/images/rhad.png"} />
           </a>
-          <a onClick={() => handleAgencyClick('4t')}>
+          <a onClick={() => handleAgencyClick('4t', '4t.png')}>
             <AgencieButton imageSrc={"/images/4t.png"} />
           </a>
-          <a onClick={() => handleAgencyClick('valorrh')}>
+          <a onClick={() => handleAgencyClick('valorrh', 'valo.png')}>
             <AgencieButton imageSrc={"/images/valo.png"} />
           </a>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Agencies;
