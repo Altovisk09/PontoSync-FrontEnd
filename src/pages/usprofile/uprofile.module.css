@@ -1,12 +1,96 @@
 .mainContainer {
-    display: contents;
+    margin-right: 20px;
+    padding-bottom: 30px;
 }
-.userInfoContainer {
-    padding: 0;
+
+.contentMain {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    margin-top: 20px;
+    margin-right: 25px;
+    border-radius: 15px;
+    padding: 25px;
 }
-.infoContainer {
-    padding: 0;
-}
+
 .configContainer {
-    padding: 0;
+    margin-bottom: 20px; /* Espaçamento entre seções */
+}
+
+.passwordSection, .securityQuestionSection {
+    margin-bottom: 20px; /* Espaçamento entre seções */
+}
+
+.profileImage {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.profileImage img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.profileImage .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profileImage:hover img {
+    filter: brightness(70%);
+}
+
+.profileImage:hover .overlay {
+    opacity: 1;
+}
+
+.overlay img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+}
+
+.infoContainer {
+    margin-top: 20px;
+}
+
+.userDelete {
+    margin-top: 30px;
+}
+
+.userDelete p {
+    margin-bottom: 10px;
+}
+
+.menuItem {
+    cursor: pointer; /* Cursor pointer para indicar que é clicável */
+    padding: 10px; /* Adiciona padding para espaçamento */
+    transition: color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.menuItem:hover {
+    color: #1976d2; /* Mudança de cor ao passar o mouse */
+}
+
+.activeButton {
+    transition: transform 0.3s ease; /* Transição suave para animação */
+}
+
+.activeButton:active {
+    transform: scale(0.95); /* Efeito de escala ao clicar */
 }
