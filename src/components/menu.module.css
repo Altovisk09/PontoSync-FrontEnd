@@ -113,10 +113,6 @@
     padding: 0.6rem;
 }
 
-.menu:hover .optionItem span {
-    margin-top: 1px;
-}
-
 .menu:hover .user img {
     width: 3rem;
     height: 3rem;

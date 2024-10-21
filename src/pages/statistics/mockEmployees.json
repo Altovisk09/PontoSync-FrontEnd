@@ -1,0 +1,253 @@
+{
+    "employees": [
+        {
+            "id": "001001229948",
+            "timeEntries": [
+                {
+                    "date": "2024-08-02",
+                    "day": "Sex",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-15",
+                    "day": "Dom",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-05",
+                    "day": "S\u00e1b",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-12",
+                    "day": "Ter",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229949",
+            "timeEntries": [
+                {
+                    "date": "2024-08-10",
+                    "day": "S\u00e1b"
+                },
+                {
+                    "date": "2024-09-20",
+                    "day": "Sex",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-18",
+                    "day": "S\u00e1b",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-25",
+                    "day": "Seg",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229950",
+            "timeEntries": [
+                {
+                    "date": "2024-08-15",
+                    "day": "Qui",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-22",
+                    "day": "Dom",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-22",
+                    "day": "Ter",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-08",
+                    "day": "Sex",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229951",
+            "timeEntries": [
+                {
+                    "date": "2024-08-20",
+                    "day": "Ter",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-29",
+                    "day": "Dom",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-10",
+                    "day": "Qua",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-15",
+                    "day": "Sex",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229952",
+            "timeEntries": [
+                {
+                    "date": "2024-08-25",
+                    "day": "Dom",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-05",
+                    "day": "Qui",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-30",
+                    "day": "Qua",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-03",
+                    "day": "Seg",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229953",
+            "timeEntries": [
+                {
+                    "date": "2024-08-18",
+                    "day": "Dom",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-10",
+                    "day": "Ter",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-12",
+                    "day": "S\u00e1b",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-22",
+                    "day": "Sex",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229954",
+            "timeEntries": [
+                {
+                    "date": "2024-08-30",
+                    "day": "Sex",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-25",
+                    "day": "Qua",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-28",
+                    "day": "Seg",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-14",
+                    "day": "Qui",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229955",
+            "timeEntries": [
+                {
+                    "date": "2024-08-08",
+                    "day": "Qui",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-18",
+                    "day": "Qua",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-03",
+                    "day": "Qui",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-09",
+                    "day": "S\u00e1b",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229956",
+            "timeEntries": [
+                {
+                    "date": "2024-08-13",
+                    "day": "Ter",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-22",
+                    "day": "Dom",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-16",
+                    "day": "Qua",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-26",
+                    "day": "Ter",
+                    "motive": "falta"
+                }
+            ]
+        },
+        {
+            "id": "001001229957",
+            "timeEntries": [
+                {
+                    "date": "2024-08-28",
+                    "day": "Qua",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-09-14",
+                    "day": "S\u00e1b",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-10-09",
+                    "day": "Qua",
+                    "motive": "falta"
+                },
+                {
+                    "date": "2024-11-05",
+                    "day": "Ter",
+                    "motive": "falta"
+                }
+            ]
+        }
+    ]
+}
